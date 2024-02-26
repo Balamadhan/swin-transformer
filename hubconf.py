@@ -4,11 +4,11 @@ import torch
 import swin
 
 MODEL_URLS = {
-    "swin_tiny_patch4_window7_224": "https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth"
+    "swinv2_large_patch4_window12_192_22k": "https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_large_patch4_window12_192_22k.pth"
 }
 
-def swin_tiny_patch4_window7_224(pretrained=False):
+def swinv2_large_patch4_window12_192_22k(pretrained=False):
     model = swin.SwinTransformer()
     if pretrained:
-        model.load_state_dict(torch.hub.load_state_dict_from_url(MODEL_URLS["swin_tiny_patch4_window7_224"], map_location="cpu")['model'])
+        model.load_state_dict(torch.hub.load_state_dict_from_url(MODEL_URLS["swinv2_large_patch4_window12_192_22k"], map_location="cpu")['model'])
     return model
